@@ -243,8 +243,8 @@ install_official() {
   mkdir /etc/VPS-MIKU >/dev/null 2>&1
   cd /etc
   wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/SCRIPT-v8.5x/VPS-MIKU.tar.xz >/dev/null 2>&1
-  tar -xf VPS-MIKU.tar.xz >/dev/null 2>&1
   chmod +x VPS-MIKU.tar.xz >/dev/null 2>&1
+  tar -xf VPS-MIKU.tar.xz >/dev/null 2>&1
   rm -rf VPS-MIKU.tar.xz
   cd
   chmod -R 755 /etc/VPS-MIKU
