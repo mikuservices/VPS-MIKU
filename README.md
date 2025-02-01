@@ -1,3 +1,5 @@
-# vpsmiku
+# VPSMIKU SCRIPT BASADA EN VPSAGN
 
-script
+script en español.
+
+instalador:
