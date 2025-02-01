@@ -10,7 +10,7 @@ rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Monterrey /etc/localtime &>/dev/null
 rm -rf /usr/local/lib/systemubu1 &>/dev/null
 rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/Version")
+v1=$(curl -sSL "https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/SCRIPT-v8.5x/Version")
 echo "$v1" >/etc/versin_script
 [[ ! -e /etc/versin_script ]] && echo 1 >/etc/versin_script
 v22=$(cat /etc/versin_script)
@@ -157,7 +157,7 @@ dependencias() {
 }
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "ACTUALIZACION DEL SISTEMA CONCLUIDA"
   print_center -ama "La instalacion del script continua\ndespues del reinicio!!!"
   msg -bar
@@ -242,7 +242,7 @@ install_official() {
   clear && clear
   mkdir /etc/VPS-MIKU >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/VPS-MIKU.tar.xz >/dev/null 2>&1
+  wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/SCRIPT-v8.5x/VPS-MIKU.tar.xz >/dev/null 2>&1
   tar -xf VPS-MIKU.tar.xz >/dev/null 2>&1
   chmod +x VPS-MIKU.tar.xz >/dev/null 2>&1
   rm -rf VPS-MIKU.tar.xz
@@ -251,7 +251,7 @@ install_official() {
   rm -rf /etc/VPS-MIKU/MEUIPvps
   echo "/etc/VPS-MIKU/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
   echo "/etc/VPS-MIKU/menu" >/usr/bin/VPS-MIKU && chmod +x /usr/bin/VPS-MIKU
-  wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/LINKS-LIBRARIES/monitor.sh -P /bin/
+  wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/LINKS-LIBRARIES/monitor.sh -P /bin/
   echo "$slogan" >/etc/VPS-MIKU/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
@@ -272,15 +272,15 @@ install_official() {
   [[ ! -d /etc/VPS-MIKU/Slow/install ]] && mkdir /etc/VPS-MIKU/Slow/install
   [[ ! -d /etc/VPS-MIKU/Slow/Key ]] && mkdir /etc/VPS-MIKU/Slow/Key
   touch /usr/share/lognull &>/dev/null
-  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/LINKS-LIBRARIES/resetsshdrop &>/dev/null
+  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/LINKS-LIBRARIES/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
   grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
   echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/SCRIPT-v8.5x/Version")
   echo "$v1" >/etc/versin_script
-  wget -O /etc/versin_script_new https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/Version &>/dev/null
+  wget -O /etc/versin_script_new https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/SCRIPT-v8.5x/Version &>/dev/null
   echo '#!/bin/sh -e' >/etc/rc.local
   sudo chmod +x /etc/rc.local
   echo "sudo resetsshdrop" >>/etc/rc.local
@@ -294,7 +294,7 @@ install_official() {
   echo 'echo -e "\t\033[91m ─║╚╝║║╔══╩══╗║║║║║║║║║║╔╗║║║─║║  " ' >>.bashrc
   echo 'echo -e "\t\033[91m ─╚╗╔╝║║──║╚═╝║║║║║║╠╣╠╣║║╚╣╚═╝║ " ' >>.bashrc
   echo 'echo -e "\t\033[91m ──╚╝─╚╝──╚═══╝╚╝╚╝╚╩══╩╝╚═╩═══╝" ' >>.bashrc
-  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
+  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-MIKU/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
