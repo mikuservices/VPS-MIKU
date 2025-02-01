@@ -278,7 +278,7 @@ install_official() {
   echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://raw.githubusercontent.com/khaledagn/VPS-MIKU_English_Official/master/SCRIPT-v8.5x/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/mikuservices/VPS-MIKU_English_Official/master/SCRIPT-v8.5x/Version")
   echo "$v1" >/etc/versin_script
   wget -O /etc/versin_script_new https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/Version &>/dev/null
   echo '#!/bin/sh -e' >/etc/rc.local
