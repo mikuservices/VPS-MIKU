@@ -250,7 +250,7 @@ install_official() {
   chmod -R 755 /etc/VPS-MIKU
   rm -rf /etc/VPS-MIKU/MEUIPvps
   echo "/etc/VPS-MIKU/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-MIKU/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
+  echo "/etc/VPS-MIKU/menu" >/usr/bin/VPS-MIKU && chmod +x /usr/bin/VPS-MIKU
   wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/LINKS-LIBRARIES/monitor.sh -P /bin/
   echo "$slogan" >/etc/VPS-MIKU/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
@@ -278,7 +278,7 @@ install_official() {
   echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://raw.githubusercontent.com/mikuservices/VPS-MIKU_English_Official/master/SCRIPT-v8.5x/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/Version")
   echo "$v1" >/etc/versin_script
   wget -O /etc/versin_script_new https://raw.githubusercontent.com/mikuservices/VPS-MIKU/master/SCRIPT-v8.5x/Version &>/dev/null
   echo '#!/bin/sh -e' >/etc/rc.local
@@ -317,7 +317,7 @@ install_official() {
 #MENUS
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
-echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR MikuServices Script VPS-MIKU 30-01-2025 v8.5 \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR MikuServices Script VPS-MIKU 01-02-2025 v8.5 \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mInserta el numero según tu respuesta:\e[32m "
 read opcao
