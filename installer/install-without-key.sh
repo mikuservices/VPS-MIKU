@@ -241,16 +241,16 @@ install_official() {
   msg -bar
   clear && clear
   mkdir /etc/VPS-MIKU >/dev/null 2>&1
-  cd /etc
+  cd /etc/VPS-MIKU
   wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/SCRIPT-v8.5x/VPS-MIKU.tar.xz >/dev/null 2>&1
-  chmod +x VPS-MIKU.tar.xz >/dev/null 2>&1
   tar -xf VPS-MIKU.tar.xz >/dev/null 2>&1
+  chmod +x VPS-MIKU.tar.xz >/dev/null 2>&1
   rm -rf VPS-MIKU.tar.xz
   cd
   chmod -R 755 /etc/VPS-MIKU
   rm -rf /etc/VPS-MIKU/MEUIPvps
   echo "/etc/VPS-MIKU/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-MIKU/menu" >/usr/bin/VPS-MIKU && chmod +x /usr/bin/VPS-MIKU
+  echo "/etc/VPS-MIKU/menu" >/usr/bin/VPS-MIKU && chmod +x /usr/bin/VPSMIKU
   wget https://raw.githubusercontent.com/mikuservices/VPS-MIKU/refs/heads/main/LINKS-LIBRARIES/monitor.sh -P /bin/
   echo "$slogan" >/etc/VPS-MIKU/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
